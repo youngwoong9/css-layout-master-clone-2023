@@ -11,77 +11,77 @@
     <title>CSS Layout Masterclass</title>
   </head>
   <body>
-    <div class="phone">
-      <header class="header">
-        <div class="i-container">
-          <i class="fa-solid fa-chevron-left"></i>
-          <i class="fa-solid fa-bars"></i>
+    <header class="header">
+      <nav class="header__nav">
+        <ul>
+          <li class="header__tab"><i class="fa-solid fa-bars fa-2xl"></i></li>
+          <li class="header__tab">Best Sellers</li>
+          <li class="header__tab">Hand Sanitizer</li>
+          <li class="header__tab">Hand Cream</li>
+          <li class="header__tab">Refills</li>
+          <li class="header__tab">HAAN</li>
+          <li class="header__tab">Toothpaste</li>
+          <li class="header__tab">Hand Soap</li>
+          <li class="header__tab">Combos</li>
+          <li class="header__tab"><i class="fa-regular fa-user"></i></li>
+          <li class="header__tab"><i class="fa-solid fa-bag-shopping"></i></li>
+        </ul>
+      </nav>
+      <div class="header__breadcrumbs">
+        <span class="header__crumb">Home /</span>
+        <span class="header__crumb">Catalog /</span>
+        <span class="header__crumb">Hand Shop /</span>
+        <span class="header__crumb">Sunset Fleur</span>
+      </div>
+    </header>
+
+    <section class="product">
+      <div class="product__img"></div>
+
+      <div class="product__info">
+        <div class="product__header">
+          <span class="product__category">Hand Soap</span>
+
+          <h1 class="product__title">SUNSET FLEUR</h1>
+
+          <div class="product__add-to-cart">
+            <div class="product__qty">
+              <i class="fa-solid fa-minus fa-2xs"></i>
+              <span class="product__total-qty">1</span>
+              <i class="fa-solid fa-plus fa-2xs"></i>
+            </div>
+            <span class="product__price">11,90€</span>
+          </div>
         </div>
-        <h1 class="header__title">MY CART</h1>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </header>
 
-      <section class="total">
-        <span class="total__price">€3550</span>
-        <span class="total__subtitle">based on your 5 items</span>
-      </section>
-
-      <section class="items">
-        <article class="item">
-          <div class="item__info">
-            <div class="item__info-col">
-              <h2 class="item__title">POP TEMPLE PRINT T-SHIRT</h2>
-              <h3 class="item__subtitle">versace limited 2021</h3>
-            </div>
-
-            <div class="item__info-col">
-              <span class="item__total-price">€ 1990</span>
-              <div class="item__piece-price">€ 995 per piece</div>
-            </div>
+        <div class="product__footer">
+          <div class="product__description">
+            <p>
+              Feminine floral breeze.<br /><br />Get your hands perfectly clean
+              whithout any sign of dryness with our Sunset Fleur Hand Soap.A
+              gentle mix between a floral scent and a premium gel formula using
+              Coco Nucifera and Aloe Vera.
+            </p>
           </div>
 
-          <div class="item__specs">
-            <div class="spec">
-              <span class="spec__title">Size</span>
-              <div class="spec__value">48-L</div>
+          <div class="product__faq">
+            <div class="product__question">
+              HOW TO USE
+              <i class="fa-solid fa-plus"></i>
             </div>
-            <div class="spec">
-              <span class="spec__title">QT</span>
-              <div class="spec__value">2 pcs</div>
+
+            <div class="product__question">
+              INGREDIENTS
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="product__question">
+              SHIPPING & PAYMENT
+              <i class="fa-solid fa-plus"></i>
             </div>
           </div>
-
-          <img class="item__photo" src="https://source.unsplash.com/random" />
-        </article>
-        <div class="margin-box"></div>
-        <article class="item">
-          <div class="item__info">
-            <div class="item__info-col">
-              <h2 class="item__title">CHAIN REACTION TRAINERS</h2>
-              <h3 class="item__subtitle">versace limited 2021</h3>
-            </div>
-
-            <div class="item__info-col">
-              <span class="item__total-price">€ 850</span>
-              <div class="item__piece-price">€ 850 per piece</div>
-            </div>
-          </div>
-
-          <div class="item__specs">
-            <div class="spec">
-              <span class="spec__title">Size</span>
-              <span class="spec__value">45</span>
-            </div>
-            <div class="spec">
-              <span class="spec__title">QT</span>
-              <span class="spec__value">1 pcs</span>
-            </div>
-          </div>
-
-          <img class="item__photo" src="https://source.unsplash.com/random" />
-        </article>
-        <div class="margin-box"></div>
-      </section>
-    </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
