@@ -1,205 +1,79 @@
 @import "styles/reset.scss";
 
-$green: #01ff01;
-$grey: #d9d9d9;
-$lightGrey: #f0f0f0;
-
-@keyframes top-slide {
-  0%,
-  100% {
-    transform: translateX(-25%);
-  }
-
-  50% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes bottom-slide {
-  0%,
-  100% {
-    transform: translateX(25%) rotateZ(180deg);
-  }
-
-  50% {
-    transform: translateX(0%) rotateZ(180deg);
-  }
-}
-
-@keyframes left-slide {
-  0%,
-  100% {
-    transform: translateY(4500%) rotateZ(-90deg);
-  }
-
-  50% {
-    transform: translateY(0%) rotateZ(-90deg);
-  }
-}
-
-@keyframes right-slide {
-  0%,
-  100% {
-    transform: translateY(-4500%) rotateZ(90deg);
-  }
-
-  50% {
-    transform: translateY(0%) rotateZ(90deg);
-  }
-}
+$white: #dee1d6;
+$green: #5ebc44;
 
 body {
+  background-color: black;
   height: 100vh;
   box-sizing: border-box;
-
-  display: grid;
-  grid-template-columns: 50px 1fr 50px;
-  grid-template-rows: 50px 1fr 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bar {
+.poster {
   background-color: $green;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
-  span {
-    white-space: nowrap;
-
-    font-weight: 600;
-    font-size: 18px;
-  }
-
-  &:nth-child(2) {
-    span {
-      animation: top-slide 20s linear infinite;
-    }
-  }
-
-  &:nth-child(4) {
-    span {
-      animation: left-slide 20s linear infinite;
-    }
-  }
-
-  &:nth-child(6) {
-    span {
-      animation: right-slide 20s linear infinite;
-    }
-  }
-
-  &:nth-child(8) {
-    span {
-      animation: bottom-slide 20s linear infinite;
-    }
-  }
-}
-
-main {
-  background-color: black;
+  width: 35%;
+  height: 100%;
 
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  gap: 2px;
-  height: calc(100vh - 100px);
+  grid-template-rows: 3fr 7fr;
 
-  & > div {
-    background-color: $grey;
+  .top {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 25px;
+    row-gap: 40px;
 
-    &:has(img) {
-      padding: 20px;
-    }
+    .top__box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
 
-    &:nth-child(5) {
-      grid-column: span 2;
-    }
+      h1 {
+        font-size: 90px;
+      }
 
-    &:nth-child(7) {
-      grid-area: span 4 / span 2;
-      background-color: $lightGrey;
-
-      img {
-        width: 100%;
-        height: 100%;
+      &:last-child {
+        color: white;
+        font-size: 20px;
+        align-self: center;
       }
     }
+  }
 
-    &:nth-child(8) {
-      grid-column: span 4;
-      background-color: $lightGrey;
-    }
+  .bottom {
+    overflow: hidden;
 
-    &:nth-child(9) {
-      grid-column: span 2;
-      background-color: $lightGrey;
-    }
+    .circles {
+      transform: scale(1.08);
+      background-color: black;
+      display: grid;
+      height: 100%;
+      grid-template: repeat(11, 1fr) / repeat(11, 1fr);
+      gap: 5px;
 
-    &:nth-child(10) {
-      grid-area: span 2 / span 2;
-      background-color: $lightGrey;
-
-      img {
+      .circle {
         width: 100%;
         height: 100%;
+        background-color: $green;
+        border-radius: 50%;
+
+        &:nth-child(n + 13):nth-child(13),
+        &:nth-child(n + 24):nth-child(-n + 25),
+        &:nth-child(n + 35):nth-child(-n + 37),
+        &:nth-child(n + 46):nth-child(-n + 49),
+        &:nth-child(n + 57):nth-child(-n + 61),
+        &:nth-child(n + 68):nth-child(-n + 73),
+        &:nth-child(n + 79):nth-child(-n + 85),
+        &:nth-child(n + 90):nth-child(-n + 97),
+        &:nth-child(n + 101):nth-child(-n + 109) {
+          background-color: $white;
+        }
       }
     }
-
-    &:nth-child(11) {
-      grid-area: span 2 / span 2;
-      border-bottom-right-radius: 15px;
-      background-color: $lightGrey;
-    }
-
-    &:nth-child(12) {
-      grid-area: span 2 / span 2;
-      border-bottom-left-radius: 15px;
-      background-color: $lightGrey;
-    }
-
-    &:nth-child(13) {
-      grid-area: span 2 / span 4;
-      border-top-right-radius: 15px;
-      background-color: $lightGrey;
-    }
-
-    &:nth-child(14) {
-      grid-area: span 2 / span 2;
-      border-top-left-radius: 15px;
-    }
-  }
-
-  .title {
-    grid-area: span 2 / span 8;
-
-    display: flex;
-    justify-content: center;
-    align-items: cetner;
-    font-size: 160px;
-    font-weight: 600;
-  }
-
-  .nav-btn {
-    display: flex;
-    align-items: center;
-
-    font-size: 18px;
-    font-weight: 600;
-  }
-}
-
-.dot {
-  background-color: #01ff01;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & * {
-    width: 15px;
-    height: 15px;
-    background-color: black;
   }
 }
